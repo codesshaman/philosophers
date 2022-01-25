@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   philo_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mseastar <mseastar@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 20:02:22 by mseastar          #+#    #+#             */
-/*   Updated: 2022/01/16 16:57:55 by mseastar         ###   ########.fr       */
+/*   Created: 2022/01/24 16:38:04 by jleslee           #+#    #+#             */
+/*   Updated: 2022/01/25 16:38:11 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ t_vars *vars);
 int				ft_phil_lstclear(t_phil **phil, int status);
 int				ft_init_phils(t_vars *vars, t_phil **phil);
 int				ft_write(t_phil *phil, char c);
-int				ft_check_dead(t_phil *phil);
 int				ft_do(t_vars *vars, t_phil **phil);
 int				ft_sleep(t_vars *vars, unsigned int time_to_sleep);
 void			ft_child(t_phil *phil);

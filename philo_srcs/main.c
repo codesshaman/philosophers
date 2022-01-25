@@ -1,6 +1,18 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jleslee <jleslee@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/22 11:02:20 by jleslee           #+#    #+#             */
+/*   Updated: 2022/01/25 15:30:18 by jleslee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "philo.h"
+
+// Создаём потоки
 
 static int	ft_pthread_cicle(t_phil **phil)
 {
@@ -22,6 +34,8 @@ static int	ft_pthread_cicle(t_phil **phil)
 	}
 	return (0);
 }
+
+// Убиваем потоки
 
 static int	ft_destr_mutex(t_phil *phil)
 {
@@ -47,7 +61,7 @@ static int	ft_destr_mutex(t_phil *phil)
 	return (1);
 }
 
-
+// Действия философа
 
 int	ft_do(t_vars *vars, t_phil **phil)
 {

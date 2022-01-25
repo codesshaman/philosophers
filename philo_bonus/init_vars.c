@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_vars.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jleslee <jleslee@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/25 16:42:27 by jleslee           #+#    #+#             */
+/*   Updated: 2022/01/25 16:42:28 by jleslee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "philo_bonus.h"
 
@@ -46,4 +57,20 @@ int	ft_init_phils(t_vars *vars, t_phil **phil)
 	(*phil)->prev = ft_phil_last(phil);
 	(*phil)->prev->next = *phil;
 	return (0);
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+int	ft_error(char *str)
+{
+	write(2, str, ft_strlen(str));
+	return (1);
 }

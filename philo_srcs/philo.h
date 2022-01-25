@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jleslee <jleslee@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/22 11:02:16 by jleslee           #+#    #+#             */
+/*   Updated: 2022/01/25 16:38:27 by jleslee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
@@ -46,6 +56,5 @@ int				ft_phil_lstclear(t_phil **phil, int status);
 int				ft_init_phils(t_vars *vars, t_phil **phil);
 int				ft_write(t_phil *phil, char c);
 int				ft_check_dead(t_phil *phil);
-int				ft_do(t_vars *vars, t_phil **phil);
 int				ft_sleep(t_vars *vars, unsigned int time_to_sleep);
 #endif

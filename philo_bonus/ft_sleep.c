@@ -1,5 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sleep.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jleslee <jleslee@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/25 16:42:09 by jleslee           #+#    #+#             */
+/*   Updated: 2022/01/25 16:42:11 by jleslee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "philo_bonus.h"
+
+int	ft_get_time(struct timeval *tp_before)
+{
+	int				time_dif;
+	struct timeval	tp;
+
+	if (gettimeofday(&tp, NULL))
+		return (-1);
+	time_dif = ((int)(tp.tv_sec - tp_before->tv_sec)) * 1000;
+	time_dif += ((int)(tp.tv_usec - (int)tp_before->tv_usec)) / 1000;
+	return (time_dif);
+}
 
 int	ft_sleep(t_vars *vars, unsigned int time_to_sleep)
 {

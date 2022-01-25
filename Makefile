@@ -18,13 +18,14 @@ SRCS =		philo_srcs/ft_atoi.c \
 			philo_srcs/mutex_processing.c \
 			philo_srcs/philo_sleep.c \
 			philo_srcs/main.c
-						
-					
 
-BONUS =		philo_bonus/main.c				philo_bonus/ft_error.c			philo_bonus/ft_init_vars.c \
-			philo_bonus/ft_atoi.c			philo_bonus/ft_do.c				philo_bonus/ft_lst.c \
-			philo_bonus/ft_write.c			philo_bonus/ft_get_time.c 		philo_bonus/ft_check_dead.c \
-			philo_bonus/ft_sleep.c			philo_bonus/ft_child.c 			philo_bonus/ft_sem.c
+BONUS =		philo_bonus/main.c	\
+			philo_bonus/init_vars.c \
+			philo_bonus/ft_atoi.c	\
+			philo_bonus/init_list.c \
+			philo_bonus/ft_sleep.c	\
+			philo_bonus/init_child.c \
+			philo_bonus/ft_sem.c
 
 OBJS = ${SRCS:%.c=%.o}
 
@@ -36,7 +37,6 @@ BHEADER = philo_bonus/philo_bonus.h
 
 LIB = philo.a
 
-BLIB = philo_bonus.a
 
 # ------------------------------------------------------------------------------
 %.o :		%.c ${HEADER}
