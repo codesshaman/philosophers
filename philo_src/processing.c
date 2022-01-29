@@ -55,7 +55,7 @@ void	died_philo(t_philo *philo, int i)
 	}
 }
 
-void	*ft_galina_monitor(void *args)
+void	*ft_monitor(void *args)
 {
 	t_philo	*philo;
 	long	time_now;

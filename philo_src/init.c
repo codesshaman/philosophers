@@ -65,7 +65,7 @@ void	ft_init_threads(t_arg *args)
 	while (nbr_ph--)
 		pthread_create(&threads[nbr_ph], \
 			NULL, ft_process, (void *)&args->all_philos[nbr_ph]);
-	pthread_create(&s_tid, NULL, ft_galina_monitor, (void *)args->all_philos);
+	pthread_create(&s_tid, NULL, ft_monitor, (void *)args->all_philos);
 	pthread_join(s_tid, NULL);
 	args->tids = threads;
 }

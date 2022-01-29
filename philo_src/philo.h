@@ -67,7 +67,7 @@ void	ft_usleep(int ms);
 int		ft_atoi(const char *str);
 int		ft_is_digit(char *str);
 int		ft_cnt_of_meals(t_philo *philo);
-void	*ft_galina_monitor(void *args);
+void	*ft_monitor(void *args);
 void	*ft_process(void *args);
 void	ft_init_philosophers(t_arg *args);
 void	ft_init_mutex(t_arg *args);

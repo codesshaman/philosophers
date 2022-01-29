@@ -27,7 +27,7 @@
 
 typedef struct s_philo
 {
-	pthread_t	galina_tid;
+	pthread_t	tid;
 	sem_t		*actions;
 	size_t		philo_ind;
 	size_t		total_nbr_of_meals;
@@ -35,9 +35,11 @@ typedef struct s_philo
 	int			nbr_of_meals;
 }				t_philo;
 
+// Конфиг с семафорами и параметрами времени
+
 typedef struct s_arg
 {
-	pthread_t	galina_tid;
+	pthread_t	tid;
 	pid_t		*pid_philo;
 	sem_t		*write_sem;
 	sem_t		*fork_sem;
