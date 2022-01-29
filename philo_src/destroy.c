@@ -12,12 +12,16 @@
 
 #include "philo.h"
 
+// Освобождаем память всех потоков
+
 void	free_all(t_arg *args)
 {
 	free(args->tids);
 	free(args->all_philos);
 	free(args->forks);
 }
+
+// Разблокируем и разрушаем исключения
 
 void	unlock_and_destroy_mutex(t_arg *args)
 {
@@ -32,6 +36,8 @@ void	unlock_and_destroy_mutex(t_arg *args)
 	pthread_mutex_unlock(&(*args).lock_print);
 	pthread_mutex_destroy(&(*args).lock_print);
 }
+
+// Выводим сообщение о несоответствии аргументов
 
 void	ft_check_args(void)
 {

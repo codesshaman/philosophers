@@ -12,6 +12,8 @@
 
 #include "philo.h"
 
+// Берём в руки вилку
+
 void	taking_forks_else(t_philo *philo)
 {
 	pthread_mutex_lock(philo->l_f);
@@ -26,6 +28,8 @@ void	taking_forks_else(t_philo *philo)
 	}
 	pthread_mutex_unlock(&philo->lock_print);
 }
+
+// Берём вторую вилку
 
 void	taking_forks(t_philo *philo)
 {
@@ -47,6 +51,8 @@ void	taking_forks(t_philo *philo)
 		taking_forks_else(philo);
 }
 
+// Питаемся
+
 void	eating(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->lock_print);
@@ -60,6 +66,8 @@ void	eating(t_philo *philo)
 	pthread_mutex_unlock(philo->r_f);
 }
 
+// Засыпаем от переедания
+
 void	sleeping(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->lock_print);
@@ -68,6 +76,8 @@ void	sleeping(t_philo *philo)
 	pthread_mutex_unlock(&philo->lock_print);
 	ft_usleep(philo->time_to_sleep);
 }
+
+// Просыпаемся и мыслим, нафиг нам такая жизнь...
 
 void	thinking(t_philo *philo)
 {

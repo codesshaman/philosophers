@@ -12,6 +12,8 @@
 
 #include "philo.h"
 
+// Инициализация философов
+
 void	ft_init_philosophers(t_arg *args)
 {
 	int		i;
@@ -41,6 +43,8 @@ void	ft_init_philosophers(t_arg *args)
 	args->all_philos = philos;
 }
 
+// Инициализируем взаимные исключения
+
 void	ft_init_mutex(t_arg *args)
 {
 	int				nbr_ph;
@@ -53,6 +57,8 @@ void	ft_init_mutex(t_arg *args)
 	pthread_mutex_init(&args->lock_print, NULL);
 	args->forks = mutex;
 }
+
+// Инициализируем потоки
 
 void	ft_init_threads(t_arg *args)
 {
@@ -70,6 +76,8 @@ void	ft_init_threads(t_arg *args)
 	args->tids = threads;
 }
 
+// Завершаем потоки, разблокируем исключения
+
 void	ft_end_threads(t_arg *args)
 {
 	int	nbr_ph;
@@ -85,6 +93,8 @@ void	ft_end_threads(t_arg *args)
 		pthread_join(args->tids[nbr_ph], NULL);
 	}
 }
+
+// Заполняем структуру аргументами
 
 int	ft_init_args(t_arg *args, int argc, char **argv)
 {

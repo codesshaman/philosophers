@@ -12,6 +12,8 @@
 
 #include "philo.h"
 
+// Проверка аргументов на валидность
+
 static int	ft_check_valid(int argc, char **argv)
 {
 	size_t	i;

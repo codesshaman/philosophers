@@ -12,7 +12,7 @@
 
 #include "philo.h"
 
-
+// Подсчёт питающихся одновременно
 
 int	ft_cnt_of_eatings(t_philo *philo)
 {
@@ -41,6 +41,8 @@ int	ft_cnt_of_eatings(t_philo *philo)
 	return (0);
 }
 
+// Смерть философа Т.Т
+
 void	died_philo(t_philo *philo, int i)
 {
 	philo->arg->dead = 1;
@@ -55,7 +57,7 @@ void	died_philo(t_philo *philo, int i)
 	}
 }
 
-// 
+// Умерщвляем либо кормим философа
 
 void	*ft_monitor(void *args)
 {
