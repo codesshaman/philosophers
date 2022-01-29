@@ -1,4 +1,6 @@
-NAME = philo
+NAME = philo/philo
+
+BONUS_NAME = philo_bonus/philo_bonus
 
 CC = gcc -pthread
 
@@ -8,12 +10,12 @@ RM = rm -rf
 
 AR = ar rcs
 
-SRCS		=	philo_src/actions.c\
-			philo_src/destroy.c\
-			philo_src/init.c\
-			philo_src/main.c\
-			philo_src/processing.c\
-			philo_src/utils.c
+SRCS		=	philo/actions.c\
+			philo/destroy.c\
+			philo/init.c\
+			philo/main.c\
+			philo/processing.c\
+			philo/utils.c
 
 BONUS =		philo_bonus/actions.c	\
 			philo_bonus/init.c \
@@ -38,7 +40,7 @@ $(NAME): $(OBJS)
 
 bonus:	 	${BOBJS} ${BHEADER}
 			${AR} ${LIB} $?
-			${CC} ${LIB} -o ${NAME}
+			${CC} ${LIB} -o ${BONUS_NAME}
 
 all:		${NAME}
 
@@ -46,7 +48,7 @@ clean:
 			${RM} ${OBJS} ${BOBJS}
 
 fclean:		clean
-			${RM} ${NAME} ${LIB} ${BLIB} ${NAME_B}
+			${RM} ${NAME} ${LIB} ${BLIB} ${BONUS_NAME}
 
 re:			fclean all
 
