@@ -27,7 +27,7 @@ int	ft_start_philo(t_arg *args)
 {
 	int	i;
 
-	i = 0;printf("Invalid argument\n");
+	i = 0;
 	args->start_time = ft_time();
 	while (i < args->nbr_philo)
 	{
