@@ -14,18 +14,18 @@
 
 
 
-int	ft_cnt_of_meals(t_philo *philo)
+int	ft_cnt_of_eatings(t_philo *philo)
 {
 	int	flag_enough;
 	int	i;
 
-	if (philo->total_nbr_of_meals != -1 \
-		&& philo->total_nbr_of_meals_1 > 0)
+	if (philo->total_nbr_of_eating != -1 \
+		&& philo->total_nbr_of_eating_1 > 0)
 	{
 		flag_enough = 1;
 		i = -1;
 		while (++i < philo->nbr_philo)
-			if (philo[i].total_nbr_of_meals < philo->total_nbr_of_meals_1)
+			if (philo[i].total_nbr_of_eating < philo->total_nbr_of_eating_1)
 				flag_enough = 0;
 		if (flag_enough == 1)
 		{
@@ -69,14 +69,14 @@ void	*ft_monitor(void *args)
 		while (++i < philo->nbr_philo)
 		{
 			time_now = ft_time();
-			if (time_now - philo[i].time_of_last_meal > philo[i].limit_of_life)
+			if (time_now - philo[i].time_of_last_eating > philo[i].limit_of_life)
 			{
 				died_philo(philo, i);
 				pthread_mutex_unlock(&philo->lock_print);
 				return (NULL);
 			}
 		}
-		if (ft_cnt_of_meals(philo) || philo->stop)
+		if (ft_cnt_of_eatings(philo) || philo->stop)
 			return (NULL);
 	}
 	return (NULL);
@@ -87,23 +87,23 @@ void	*ft_process(void *args)
 	t_philo		*philo;
 
 	philo = (t_philo *)args;
-	philo->time_of_last_meal = ft_time();
+	philo->time_of_last_eating = ft_time();
 	philo->start_time = ft_time();
 	while (!philo->arg->dead)
 	{
-		if (philo->arg->dead || philo->stop || ft_cnt_of_meals(philo))
+		if (philo->arg->dead || philo->stop || ft_cnt_of_eatings(philo))
 			return (NULL);
 		taking_forks(philo);
-		if (philo->arg->dead || philo->stop || ft_cnt_of_meals(philo))
+		if (philo->arg->dead || philo->stop || ft_cnt_of_eatings(philo))
 			return (NULL);
 		eating(philo);
-		if (philo->arg->dead || philo->stop || ft_cnt_of_meals(philo))
+		if (philo->arg->dead || philo->stop || ft_cnt_of_eatings(philo))
 			return (NULL);
 		sleeping(philo);
-		if (philo->arg->dead || philo->stop || ft_cnt_of_meals(philo))
+		if (philo->arg->dead || philo->stop || ft_cnt_of_eatings(philo))
 			return (NULL);
 		thinking(philo);
-		if (philo->arg->dead || philo->stop || ft_cnt_of_meals(philo))
+		if (philo->arg->dead || philo->stop || ft_cnt_of_eatings(philo))
 			return (NULL);
 	}
 	return (NULL);

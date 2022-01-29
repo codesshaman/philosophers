@@ -23,12 +23,12 @@ void	ft_init_philosophers(t_arg *args)
 	{
 		philos[i].philo_id = i;
 		philos[i].nbr_philo = args->nbr_philo;
-		philos[i].total_nbr_of_meals = 0;
-		philos[i].total_nbr_of_meals_1 = args->nbr_of_meals;
+		philos[i].total_nbr_of_eating = 0;
+		philos[i].total_nbr_of_eating_1 = args->nbr_of_eating;
 		philos[i].time_to_eat = args->time_to_eat;
 		philos[i].time_to_sleep = args->time_to_sleep;
 		philos[i].time_to_die = args->time_to_die;
-		philos[i].time_of_last_meal = ft_time();
+		philos[i].time_of_last_eating = ft_time();
 		philos[i].limit_of_life = args->time_to_die;
 		philos[i].stop = 0;
 		philos[i].l_f = \
@@ -94,16 +94,16 @@ int	ft_init_args(t_arg *args, int argc, char **argv)
 	args->time_to_sleep = ft_atoi(argv[4]);
 	args->dead = 0;
 	if (argc == 6)
-		args->nbr_of_meals = ft_atoi(argv[5]);
+		args->nbr_of_eating = ft_atoi(argv[5]);
 	if (argc == 5)
 	{
 		if (args->nbr_philo < 1)
 			return (0);
-		args->nbr_of_meals = -1;
+		args->nbr_of_eating = -1;
 	}
 	if (argc == 6)
 	{
-		if (args->nbr_of_meals < 1)
+		if (args->nbr_of_eating < 1)
 			return (0);
 	}
 	return (0);

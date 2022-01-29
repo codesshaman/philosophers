@@ -41,5 +41,5 @@ void	ft_check_args(void)
 	printf("2: Time to die\n");
 	printf("3: Time to eat\n");
 	printf("4: Time to sleep\n");
-	printf("5: Number of meals\n");
+	printf("5: Number of eatings\n");
 }

@@ -53,8 +53,8 @@ void	eating(t_philo *philo)
 	printf("%ld %d is eating\n", \
 		ft_time() - philo->start_time, philo->philo_id + 1);
 	pthread_mutex_unlock(&philo->lock_print);
-	philo->total_nbr_of_meals += 1;
-	philo->time_of_last_meal = ft_time();
+	philo->total_nbr_of_eating += 1;
+	philo->time_of_last_eating = ft_time();
 	ft_usleep(philo->time_to_eat);
 	pthread_mutex_unlock(philo->l_f);
 	pthread_mutex_unlock(philo->r_f);
