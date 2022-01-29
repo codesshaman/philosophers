@@ -12,6 +12,8 @@
 
 #include "philo_bonus.h"
 
+// Ждём или берём свободную вилку
+
 void	ft_taking_forks_eating(t_arg *args)
 {
 	sem_wait(args->fork_sem);
@@ -35,6 +37,8 @@ void	ft_taking_forks_eating(t_arg *args)
 	sem_post(args->fork_sem);
 }
 
+// Спим или мыслим
+
 void	ft_sleeping_thinking(t_arg *args)
 {
 	sem_wait(args->write_sem);
@@ -48,7 +52,9 @@ void	ft_sleeping_thinking(t_arg *args)
 	sem_post(args->write_sem);
 }
 
-void	*ft_routine(void *args)
+// Зацикливаем действия философа
+
+void	*philo_cycle(void *args)
 {
 	t_arg	*philo;
 
@@ -61,6 +67,8 @@ void	*ft_routine(void *args)
 	}
 	return (NULL);
 }
+
+// Проверяем, есть ли возможность пожрать
 
 void	*ft_eating_checker(void *arg)
 {
@@ -79,6 +87,8 @@ void	*ft_eating_checker(void *arg)
 	sem_post(args->stop);
 	return (NULL);
 }
+
+// Проверяем, не пора ли умереть...
 
 void	*ft_death_checker(void *arg)
 {

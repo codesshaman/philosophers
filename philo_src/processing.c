@@ -55,6 +55,8 @@ void	died_philo(t_philo *philo, int i)
 	}
 }
 
+// 
+
 void	*ft_monitor(void *args)
 {
 	t_philo	*philo;
@@ -81,6 +83,8 @@ void	*ft_monitor(void *args)
 	}
 	return (NULL);
 }
+
+// Обрабатываем философа после инициализации
 
 void	*ft_process(void *args)
 {

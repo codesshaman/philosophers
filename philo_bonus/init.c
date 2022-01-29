@@ -12,6 +12,8 @@
 
 #include "philo_bonus.h"
 
+// Нумеруем философов
+
 static int	ft_init_tid(t_arg *args)
 {
 	if (args->nbr_of_eating)
@@ -25,6 +27,8 @@ static int	ft_init_tid(t_arg *args)
 	}
 	return (0);
 }
+
+// Запускаем философа
 
 void	ft_init_philo(t_arg *args)
 {

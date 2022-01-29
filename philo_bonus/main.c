@@ -46,7 +46,7 @@ int	ft_start_philo(t_arg *args)
 		else if (args->pid_philo[i] == 0)
 		{
 			ft_init_philo(args);
-			ft_routine(args);
+			philo_cycle(args);
 		}
 		i++;
 	}

@@ -58,7 +58,7 @@ typedef struct s_arg
 
 void	ft_taking_forks_eating(t_arg *args);
 void	ft_sleeping_thinking(t_arg *args);
-void	*ft_routine(void *args);
+void	*philo_cycle(void *args);
 void	*ft_eating_checker(void *arg);
 void	*ft_death_checker(void *arg);
 int		ft_init_args(t_arg *args, int argc, char **argv);
