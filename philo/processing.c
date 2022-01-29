@@ -6,7 +6,7 @@
 /*   By: jleslee <jleslee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 16:01:50 by jleslee           #+#    #+#             */
-/*   Updated: 2022/01/25 16:01:56 by jleslee          ###   ########.fr       */
+/*   Updated: 2022/01/29 19:48:57 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ void	*ft_monitor(void *args)
 		while (++i < philo->nbr_philo)
 		{
 			time_now = ft_time();
-			if (time_now - philo[i].time_of_last_eating > philo[i].limit_of_life)
+			if (time_now - philo[i].time_of_last_eating > \
+			philo[i].limit_of_life)
 			{
 				died_philo(philo, i);
 				pthread_mutex_unlock(&philo->lock_print);
