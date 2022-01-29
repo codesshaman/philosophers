@@ -30,9 +30,9 @@ typedef struct s_philo
 	pthread_t	tid;
 	sem_t		*actions;
 	size_t		philo_ind;
-	size_t		total_nbr_of_meals;
-	time_t		time_of_last_meal;
-	int			nbr_of_meals;
+	size_t		total_nbr_of_eating;
+	time_t		time_of_last_eating;
+	int			nbr_of_eating;
 }				t_philo;
 
 // Конфиг с семафорами и параметрами времени
@@ -50,7 +50,7 @@ typedef struct s_arg
 	time_t		time_to_die;
 	time_t		time_to_eat;
 	time_t		time_to_sleep;
-	size_t		nbr_of_meals;
+	size_t		nbr_of_eating;
 
 	t_philo		philo;
 

@@ -14,7 +14,7 @@
 
 static int	ft_init_tid(t_arg *args)
 {
-	if (args->nbr_of_meals)
+	if (args->nbr_of_eating)
 	{
 		if (pthread_create(&args->tid, NULL, &ft_eating_checker, args))
 		{
@@ -28,7 +28,7 @@ static int	ft_init_tid(t_arg *args)
 
 void	ft_init_philo(t_arg *args)
 {
-	args->philo.time_of_last_meal = ft_time();
+	args->philo.time_of_last_eating = ft_time();
 	if (pthread_create(&args->tid, NULL, &ft_death_checker, args))
 	{
 		printf("Error pthread");
@@ -50,7 +50,7 @@ static int	ft_init_sempahore(t_arg *args)
 		O_EXCL, S_IRWXU, args->nbr_philo);
 	args->write_sem = sem_open("write_sem", O_CREAT | O_EXCL, S_IRWXU, 1);
 	args->stop = sem_open("stop", O_CREAT | O_EXCL, S_IRWXU, 0);
-	if (args->nbr_of_meals)
+	if (args->nbr_of_eating)
 		args->eat_enough = sem_open("eat_enough", O_CREAT | O_EXCL, S_IRWXU, 0);
 	return (0);
 }
@@ -65,17 +65,17 @@ int	ft_init_args(t_arg *args, int argc, char **argv)
 	args->time_to_eat = ft_atoi(argv[3]);
 	args->time_to_sleep = ft_atoi(argv[4]);
 	if (argc == 6)
-		args->nbr_of_meals = ft_atoi(argv[5]);
+		args->nbr_of_eating = ft_atoi(argv[5]);
 	args->pid_philo = malloc(sizeof(pid_t) * args->nbr_philo);
 	if (argc == 5)
 	{
 		if (args->nbr_philo < 1)
 			return (0);
-		args->nbr_of_meals = -1;
+		args->nbr_of_eating = -1;
 	}
 	if (argc == 6)
 	{
-		if (args->nbr_of_meals < 1)
+		if (args->nbr_of_eating < 1)
 			return (0);
 	}
 	memset(args->pid_philo, 0, sizeof(pid_t) * args->nbr_philo);

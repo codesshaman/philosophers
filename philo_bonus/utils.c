@@ -12,6 +12,8 @@
 
 #include "philo_bonus.h"
 
+// Получаем текущее unix-время
+
 long	ft_time(void)
 {
 	struct timeval	tv;
@@ -22,6 +24,8 @@ long	ft_time(void)
 	return (res);
 }
 
+// Проверка пропусков
+
 static int	ft_isspace(int c)
 {
 	if (c == ' ' || c == '\t' || c == '\n'\
@@ -29,6 +33,8 @@ static int	ft_isspace(int c)
 		return (1);
 	return (0);
 }
+
+// Задаём паузу в миллисекундах
 
 void	ft_usleep(int ms)
 {
@@ -39,6 +45,8 @@ void	ft_usleep(int ms)
 	while (ft_time() < time + ms)
 		usleep(ms * 3);
 }
+
+// Перевод текста в целочисленное
 
 int	ft_atoi(const char *str)
 {
@@ -62,6 +70,8 @@ int	ft_atoi(const char *str)
 	}
 	return (res * i);
 }
+
+// Проверка на число
 
 int	ft_is_digit(char *str)
 {

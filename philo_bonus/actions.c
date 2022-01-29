@@ -26,9 +26,9 @@ void	ft_taking_forks_eating(t_arg *args)
 	printf("%ld %lu is eating\n", ft_time() - args->start_time, \
 		args->philo.philo_ind + 1);
 	sem_post(args->write_sem);
-	args->philo.time_of_last_meal = ft_time();
-	args->philo.total_nbr_of_meals += 1;
-	if (args->philo.total_nbr_of_meals == args->nbr_of_meals)
+	args->philo.time_of_last_eating = ft_time();
+	args->philo.total_nbr_of_eating += 1;
+	if (args->philo.total_nbr_of_eating == args->nbr_of_eating)
 		sem_post(args->eat_enough);
 	ft_usleep(args->time_to_eat);
 	sem_post(args->fork_sem);
@@ -89,7 +89,7 @@ void	*ft_death_checker(void *arg)
 	while (1)
 	{
 		time_now = ft_time();
-		if (time_now - args->philo.time_of_last_meal > args->time_to_die)
+		if (time_now - args->philo.time_of_last_eating > args->time_to_die)
 		{
 			sem_wait(args->write_sem);
 			printf("%ld %lu died\n", \
