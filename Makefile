@@ -1,4 +1,4 @@
-CC = gcc
+CC = gcc -pthread
 
 FLAGS = -Werror -Wall -Wextra
 
