@@ -26,7 +26,7 @@ static int	ft_check_valid(int argc, char **argv)
 	{
 		if (!ft_is_digit(argv[i]) || (!ft_atoi(argv[i])))
 		{
-			printf("Invalid argument\n");
+			printf("Invalid argument: %s\n", argv[i]);
 			return (1);
 		}
 		i++;

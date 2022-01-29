@@ -27,7 +27,7 @@ int	ft_start_philo(t_arg *args)
 {
 	int	i;
 
-	i = 0;
+	i = 0;printf("Invalid argument\n");
 	args->start_time = ft_time();
 	while (i < args->nbr_philo)
 	{
@@ -76,7 +76,7 @@ static int	ft_check_valid(int argc, char **argv)
 	{
 		if (!ft_is_digit(argv[i]) || (!ft_atoi(argv[i])))
 		{
-			printf("Invalid argument\n");
+			printf("Invalid argument: %s\n", argv[i]);
 			return (1);
 		}
 		i++;
