@@ -6,7 +6,7 @@
 /*   By: jleslee <jleslee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 11:22:49 by jleslee           #+#    #+#             */
-/*   Updated: 2022/01/25 16:12:59 by jleslee          ###   ########.fr       */
+/*   Updated: 2022/01/31 22:40:35 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,6 @@ long	ft_time(void)
 	return (res);
 }
 
-// Определяем пробелы и пустые символы
-
-static int	ft_isspace(int c)
-{
-	if (c == ' ' || c == '\t' || c == '\n'\
-			|| c == '\v' || c == '\f' || c == '\r')
-		return (1);
-	return (0);
-}
-
 // Засыпаем на заданное кол-во микросекунд
 
 void	ft_usleep(int ms)
@@ -48,27 +38,32 @@ void	ft_usleep(int ms)
 
 // Переводим строку в целочисленное
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
-	int	res;
-	int	i;
+	int					i;
+	int					flag;
+	unsigned long long	nbr;
 
-	res = 0;
-	i = 1;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '-' || *str == '+')
+	i = 0;
+	nbr = 0;
+	flag = 1;
+	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
+		|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
+		i++;
+	if (str[i] == '-')
+		flag = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (*str == '-')
-			i = -1;
-		str++;
+		nbr = nbr * 10 + str[i] - '0';
+		i++;
 	}
-	while (*str >= '0' && *str <= '9')
-	{
-		res = res * 10 + (*str - 48);
-		++str;
-	}
-	return (res * i);
+	if (flag == 1 && nbr >= 2147483648)
+		break_program();
+	if (flag == -1 && nbr >= 2147483647)
+		break_program();
+	return (nbr * flag);
 }
 
 // Проверка на число

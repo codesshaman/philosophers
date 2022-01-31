@@ -6,7 +6,7 @@
 /*   By: jleslee <jleslee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 16:02:09 by jleslee           #+#    #+#             */
-/*   Updated: 2022/01/25 16:02:17 by jleslee          ###   ########.fr       */
+/*   Updated: 2022/01/31 22:38:04 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,12 @@ void	ft_check_args(void)
 	printf("3: Time to eat\n");
 	printf("4: Time to sleep\n");
 	printf("5: Number of eatings\n");
+}
+
+// Выводим сообщение о несоответствии аргументов
+
+void	break_program(void)
+{
+	printf("Number is not correct\n");
+	exit(1);
 }

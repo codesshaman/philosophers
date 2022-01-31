@@ -6,7 +6,7 @@
 /*   By: jleslee <jleslee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 22:38:33 by jleslee           #+#    #+#             */
-/*   Updated: 2022/01/25 16:37:47 by jleslee          ###   ########.fr       */
+/*   Updated: 2022/01/31 22:43:47 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,16 @@ typedef struct s_arg
 
 }				t_arg;
 
-void	ft_taking_forks_eating(t_arg *args);
-void	ft_sleeping_thinking(t_arg *args);
-void	*philo_cycle(void *args);
-void	*ft_eating_checker(void *arg);
-void	*ft_death_checker(void *arg);
-int		ft_init_args(t_arg *args, int argc, char **argv);
-void	ft_init_philo(t_arg *args);
-long	ft_time(void);
-void	ft_usleep(int ms);
-int		ft_atoi(const char *str);
-int		ft_is_digit(char *str);
+void		ft_taking_forks_eating(t_arg *args);
+void		ft_sleeping_thinking(t_arg *args);
+void		*philo_cycle(void *args);
+void		*ft_eating_checker(void *arg);
+void		*ft_death_checker(void *arg);
+int			ft_init_args(t_arg *args, int argc, char **argv);
+void		ft_init_philo(t_arg *args);
+long		ft_time(void);
+void		ft_usleep(int ms);
+long long	ft_atoi(const char *str);
+int			ft_is_digit(char *str);
 
 #endif
